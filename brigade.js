@@ -1,5 +1,5 @@
 const { events, Job } = require("brigadier");
-events.on("push", (e, p) => {
+events.on("exec", (e, p) => {
     console.log("Received push for commit " + e.revision.commit)
     var commit = e.revision.commit.substr(e.revision.commit.length - 7);
     commit = e.revision.commit.substring(0, 7);
@@ -18,14 +18,11 @@ events.on("push", (e, p) => {
 docker.tasks = [
     "dockerd-entrypoint.sh &",
     "sleep 10",
-    "pwd",
-    "ls",
-    "ls -lart",
     "cd /src/",
     "pwd",
     "ls -lart",
     "pwd",
-    "docker build -t rahuldhus766/brigade:${commit} .",
+    "docker build -t rahuldhus766/brigade:v3 .",
     "docker images",
 ]
    greeting.run();
