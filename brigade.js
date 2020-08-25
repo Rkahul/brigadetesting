@@ -26,22 +26,8 @@ docker.tasks = [
     "docker build -t rahuldhus766/brigade:v5 .",
     "docker images",
 ]
-    var node = new Job("job3", "ubuntu:latest");
-    node.storage.enabled = true;
-    node.tasks = [
-    "pwd",
-	"apt-get install nodejs",
-	"apt-get install npm",
-	"nodejs -v",
-    "cd /src/",
-    "pwd",
-    "ls -lart",
-    "node Hello.js"
-
-]
    greeting.run();
    docker.run();
-   node.run();
 
 });
 
