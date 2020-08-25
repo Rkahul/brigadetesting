@@ -18,13 +18,14 @@ events.on("push", (e, p) => {
 docker.tasks = [
     "dockerd-entrypoint.sh &",
     "sleep 10",
+    "pwd",
     "cd /src/",
     "pwd",
     "ls -lart",
     "pwd",
     "docker build -t rahuldhus766/brigade:{commit} .",
     "docker images",
-    "docker login --username=rahuldhus766"
+    "docker login --username=rahuldhus766",
 ]
    greeting.run();
    docker.run();
