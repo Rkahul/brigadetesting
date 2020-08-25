@@ -25,7 +25,7 @@ docker.tasks = [
     "pwd",
     "ls -lart",
     "pwd",
-    "docker build -t rahuldhus766/brigade:v1 .",
+    "docker build -t rahuldhus766/brigade:v2 .",
     "docker images",
 ]
    greeting.run();
