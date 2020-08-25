@@ -13,3 +13,8 @@ github:
 
 # own created SecreteKey
 sharedSecret: "brigadetesting"
+
+project.secrets.DOCKER_USER: "rahuldhus766"
+project.secrets.DOCKER_PASS: "Kalyani@1994"
+project.secrets.DOCKER_REGISTRY: "https://hub.docker.com/"
+
