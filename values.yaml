@@ -1,0 +1,15 @@
+# Assuming you have already created GitHub Account
+# Assuming repo is present that is similar to your project name
+
+project: "brigadetesting"
+repository: "github.com/Rkahul/brigadetesting"
+cloneURL: "https://github.com/Rkahul/brigadetesting.git"
+
+# GitHub token can be generated
+# GitHub settings -> developer settings -> Personal access token -> Generate new token
+
+github:
+  token: "0e5a6ac33ca478f9bfb46c93dd501fc443da7496"
+
+# own created SecreteKey
+sharedSecret: "brigadetesting"
