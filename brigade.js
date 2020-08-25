@@ -27,19 +27,7 @@ docker.tasks = [
     "pwd",
     "docker build -t rahuldhus766/brigade:v1 .",
     "docker images",
-];
-
-// If a Docker user is specified, we push.
-if (project.secrets.DOCKER_USER) {
-  docker.env.DOCKER_USER = project.secrets.DOCKER_USER
-  docker.env.DOCKER_PASS = project.secrets.DOCKER_PASS
-  docker.env.DOCKER_REGISTRY = project.secrets.DOCKER_REGISTRY
-  docker.tasks.push("docker login -u $DOCKER_USER -p $DOCKER_PASS $DOCKER_REGISTRY")
-  docker.tasks.push("docker push rahuldhus766/brigade:v1")
-} else {
-  console.log("skipping push. DOCKER_USER is not set.");
-}
-
+]
    greeting.run();
    docker.run();
 
