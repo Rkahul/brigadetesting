@@ -26,18 +26,17 @@ docker.tasks = [
     "docker build -t rahuldhus766/brigade:v5 .",
     "docker images",
 ]
-    var node = new Job("job3", "alpine:latest");
+    var node = new Job("job3", "ubuntu:latest");
     node.storage.enabled = true;
     node.tasks = [
-        "pwd",
-	"apk --no-cache add curl",
-	"curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash",
-	"nvm install node",
-	"nvm use node",
-        "cd /src/",
-        "pwd",
-        "ls -lart",
-        "node Hello.js"
+    "pwd",
+	"apt-get install nodejs",
+	"apt-get install npm",
+	"nodejs -v",
+    "cd /src/",
+    "pwd",
+    "ls -lart",
+    "node Hello.js"
 
 ]
    greeting.run();
