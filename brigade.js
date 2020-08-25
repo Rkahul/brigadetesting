@@ -1,5 +1,5 @@
 const { events, Job } = require("brigadier");
-events.on("exec", (e, p) => {
+events.on("push", (e, p) => {
     console.log("Received push for commit " + e.revision.commit)
     var commit = e.revision.commit.substr(e.revision.commit.length - 7);
     commit = e.revision.commit.substring(0, 7);
@@ -22,8 +22,9 @@ docker.tasks = [
     "pwd",
     "ls -lart",
     "pwd",
-    "docker build -t rahuldhus766/brigade:v3 .",
+    "docker build -t rahuldhus766/brigade:{commit} .",
     "docker images",
+    "docker login --username=rahuldhus766"
 ]
    greeting.run();
    docker.run();
