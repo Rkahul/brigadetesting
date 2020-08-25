@@ -7,7 +7,7 @@ events.on("exec", (e, p) => {
     greeting.storage.enabled = true;
     greeting.tasks = [
         "echo Hello Pipeline",
-        `echo commit id is ${commit}`
+        `echo correct output showing on terminal`
 
     ]
     var docker = new Job("job2" , "docker:dind");
@@ -26,8 +26,19 @@ docker.tasks = [
     "docker build -t rahuldhus766/brigade:v5 .",
     "docker images",
 ]
+    var node = new Job("job3", "alpine:latest");
+    node.storage.enabled = true;
+    node.tasks = [
+        "pwd",
+        "cd /src/",
+        "pwd",
+        "ls -lart",
+        "node Hello.js"
+
+]
    greeting.run();
    docker.run();
+   node.run();
 
 });
 
