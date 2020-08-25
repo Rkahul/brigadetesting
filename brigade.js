@@ -23,9 +23,8 @@ docker.tasks = [
     "pwd",
     "ls -lart",
     "pwd",
-    "docker build -t rahuldhus766/brigade:v4 .",
+    "docker build -t rahuldhus766/brigade:v5 .",
     "docker images",
-    "docker login --username=rahuldhus766",
 ]
    greeting.run();
    docker.run();
